@@ -11,6 +11,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Date;
@@ -128,6 +129,8 @@ public class LocationActivity extends Activity {
             tvLocationNet.setText(formatLocation(location));
         }
         mainLocation = location;
+        Button btnWeather = findViewById(R.id.btnWeather);
+        btnWeather.setEnabled(true);
     }
 
     private String formatLocation(Location location) {
