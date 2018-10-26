@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/w3"
+    tools:context="com.example.a25fli.weather.MainActivity">
+
+
+
+    <RelativeLayout
+        android:id="@+id/my_container"
+        android:layout_width="match_parent"
+        android:layout_height="@android:dimen/app_icon_size"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="35dp"
+        android:background="@color/blue">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="180dp"
+            android:layout_height="47dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Weather"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/my_container"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/weekDay"
+            android:layout_marginTop="45dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="22dp"
+            android:text="Today is" />
+
+        <TextView
+            android:id="@+id/todayIs"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="32dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@color/blue_light"
+                android:drawableRight="@android:drawable/ic_menu_search"
+                android:onClick="onClickCityName" />
+
+            <EditText
+                android:id="@+id/cityName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/blue_light"
+                android:gravity="center"
+                android:hint="enter your city"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:ems="15"
+            android:text="or" />
+        <Button
+            android:id="@+id/my_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="select geolocation"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:backgroundTint="@android:color/transparent"/>
+    </LinearLayout>
+
+</RelativeLayout>
