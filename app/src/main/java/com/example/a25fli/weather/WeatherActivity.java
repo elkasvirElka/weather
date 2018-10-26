@@ -80,6 +80,9 @@ public class WeatherActivity extends Activity {
             getTodayWeather(lat,lon);
             getWeekWeather(lat,lon);
         }
+        /**
+         * Переопределение метода кнопки для запроса пермишенов и шаринга картинки
+         */
         Button myB = findViewById(R.id.buttonShare);
         View.OnClickListener lis = new View.OnClickListener() {
             @Override
@@ -196,9 +199,6 @@ public class WeatherActivity extends Activity {
                 }
                 return;
             }
-
-            // other 'case' lines to check for other
-            // permissions this app might request.
         }
     }
 
@@ -269,10 +269,10 @@ public class WeatherActivity extends Activity {
 
                                 final TextView textViewClouds = new TextView(WeatherActivity.this);
                                 textViewClouds.setText(item.getWeather().getMain());
-                                textViewClouds.setTextSize(20);
+                                textViewClouds.setTextSize(17);
                                 LinearLayout.LayoutParams llpClouds = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                                 llpClouds.setMargins(0, 0, 100, 0); // llp.setMargins(left, top, right, bottom);
-                                llpClouds.width = 170;
+                                llpClouds.width = 190;
                                 textViewClouds.setLayoutParams(llpClouds);
                                 myLayout.addView(textViewClouds);
 
@@ -368,7 +368,7 @@ public class WeatherActivity extends Activity {
                                 textViewClouds.setTextSize(20);
                                 LinearLayout.LayoutParams llpClouds = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
                                 llpClouds.setMargins(0, 0, 100, 0); // llp.setMargins(left, top, right, bottom);
-                                llpClouds.width = 170;
+                                llpClouds.width = 190;
                                 textViewClouds.setLayoutParams(llpClouds);
                                 myLayout.addView(textViewClouds);
 
@@ -567,7 +567,7 @@ public class WeatherActivity extends Activity {
                                 //myLayout.setMinimumHeight(35);
                                 myLayout.setOrientation(LinearLayout.VERTICAL);
                                 final TextView textView = new TextView(WeatherActivity.this);
-                                textView.setTextSize(20);
+                                textView.setTextSize(15);
                                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                                 textView.setText(item.getDt_txt());
                                 myLayout.addView(textView);
@@ -583,7 +583,7 @@ public class WeatherActivity extends Activity {
 
                                 final TextView textViewTemp = new TextView(WeatherActivity.this);
                                 textViewTemp.setText(item.getMain().getTemp() + "ºC");
-                                textViewTemp.setTextSize(25);
+                                textViewTemp.setTextSize(20);
                                 textViewTemp.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                                 myLayout.addView(textViewTemp);
                                 myToolbar.addView(myLayout);
@@ -654,7 +654,7 @@ public class WeatherActivity extends Activity {
                                 //myLayout.setMinimumHeight(35);
                                 myLayout.setOrientation(LinearLayout.VERTICAL);
                                 final TextView textView = new TextView(WeatherActivity.this);
-                                textView.setTextSize(20);
+                                textView.setTextSize(15);
                                 textView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                                 textView.setText(item.getDt_txt());
                                 myLayout.addView(textView);

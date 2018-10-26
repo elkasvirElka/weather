@@ -54,7 +54,7 @@ public class LocationActivity extends Activity {
         if (Build.VERSION.SDK_INT >= 23 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             //Toast toast = Toast.makeText(this, "Измените разрешение геолокации", Toast.LENGTH_SHORT);
-         //   toast.show();
+            //   toast.show();
             ActivityCompat.requestPermissions(LocationActivity.this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
@@ -64,7 +64,6 @@ public class LocationActivity extends Activity {
                     MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
             return;
         }
-
 
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER,
                 1000 * 10, 10, locationListener);
@@ -104,7 +103,7 @@ public class LocationActivity extends Activity {
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                         MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
                 return;
-            }else {
+            } else {
                 showLocation(locationManager.getLastKnownLocation(provider));
             }
         }
@@ -130,7 +129,9 @@ public class LocationActivity extends Activity {
         }
         mainLocation = location;
         Button btnWeather = findViewById(R.id.btnWeather);
+        TextView myTooltip = findViewById(R.id.myTooltip);
         btnWeather.setEnabled(true);
+        myTooltip.setVisibility(View.GONE);
     }
 
     private String formatLocation(Location location) {
@@ -156,12 +157,10 @@ public class LocationActivity extends Activity {
                 android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
     }
 
-    ;
-
     public void onClickWeatherInfo(View view) {
         Intent intent = new Intent(LocationActivity.this, WeatherActivity.class);
-        intent.putExtra("lat", String.format( "%1$.3f", mainLocation.getLatitude()));
-        intent.putExtra("lon",  String.format( "%1$.3f",mainLocation.getLongitude()));
+        intent.putExtra("lat", String.format("%1$.3f", mainLocation.getLatitude()));
+        intent.putExtra("lon", String.format("%1$.3f", mainLocation.getLongitude()));
         startActivity(intent);
     }
 
